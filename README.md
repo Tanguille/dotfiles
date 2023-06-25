@@ -5,6 +5,7 @@ To use Chezmoi on another system, you need to follow these steps:
 1. **Install Dependencies:**
       ```shell
    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh # Install rust
+   cargo install sccache # install sccache to build up cache for rust packages that will speed up build times
    cargo install cargo-binstall # install binstall to not have to build every crate
    cargo install bat rg # install better alternatives to cat and grep
    sudo apt install fish  # use appropriate package manager
