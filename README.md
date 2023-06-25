@@ -2,19 +2,13 @@
 
 To use Chezmoi on another system, you need to follow these steps:
 
-1. **Install Chezmoi:** Install Chezmoi on the new system by following the installation instructions specific to your operating system:
+1. **Install Chezmoi:** Install Chezmoi on the new system by following the installation instructions specific to your operating system and instantly link to this repo:
 
    ```shell
-   sh -c "$(curl -fsLS get.chezmoi.io)"  
+   sh -c "$(curl -fsLS chezmoi.io/get)" -- init --apply Tanguille
    ```
 
-3. **Clone the Repository:** Clone your dotfiles repository on the new system using the following command:
-
-   ```shell
-   chezmoi init github.com/Tanguille/dotfiles
-   ```
-
-4. **Apply Dotfiles:** Apply your dotfiles to the new system by running the following command:
+   1b. **Apply Dotfiles:** If you are unsure about immediatly applying all dotfiles to your system, apply your dotfiles to the new system by running the following command:
 
    ```shell
    chezmoi apply
@@ -22,7 +16,7 @@ To use Chezmoi on another system, you need to follow these steps:
 
    Chezmoi will create the necessary symbolic links to configure your dotfiles based on the repository's contents.
 
-5. **Update Dotfiles:** If you make any changes to your dotfiles on the new system, you can synchronize them back to the repository by running:
+2. **Update Dotfiles:** If you make any changes to your dotfiles on the new system, you can synchronize them back to the repository by running:
 
    ```shell
    chezmoi diff  # View the differences
