@@ -8,7 +8,7 @@ To use Chezmoi on another system, you need to follow these steps:
    cargo install sccache # install sccache to build up cache for rust packages that will speed up build times
    cargo install cargo-binstall # install binstall to not have to build every crate
    cargo install bat rg # install better alternatives to cat and grep
-   sudo apt install fish  # use appropriate package manager
+   sudo apt install fish chezmoi  # use appropriate package manager
    curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish # install ohmyfish
    curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher # install fisher
    fisher install edc/bass # install bass for fisher compatibility with bash
