@@ -1,0 +1,29 @@
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[user]
+	name = Tanguille
+	email = 91473554+Tanguille@users.noreply.github.com
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[push]
+	default = current
+[core]
+	editor = micro
+[merge]
+	conflictstyle = diff3
+[rebase]
+	autosquash = true
+	autostash = true
+[init]
+	defaultBranch = main
+[rerere]
+	enabled = true
+[help]
+	autocorrect = 10
