@@ -1,21 +1,24 @@
-oh-my-posh init fish | source
 fastfetch
 
 # Aliases
-alias ls "/usr/bin/exa --icons --group-directories-first --color-scale -bghm"
-alias update "sudo dnf upgrade --refresh -y && sudo dnf autoremove -y && flatpak update -y && fisher update && omf update && cargo install-update -a"
+alias ls "/usr/bin/eza --icons --group-directories-first --color-scale -bghm"
+alias update "sudo dnf upgrade --refresh -y && sudo dnf autoremove -y && flatpak update -y && brew upgrade && fisher update && omf update && rustup update && cargo install-update -a"
 alias speedtest "python speedtest-cli"
-alias cat "bat"
+#alias cat "bat"
 alias grep "rg"
+alias cc "cargo lcheck"
+alias cb "cargo build && cargo clippy"
+alias cf "cargo fmt"
+alias dnf "dnf5"
 
-function cargo
-    if test "$argv[1]" = "install"
-        command cargo binstall $argv[2..-1]
-    else
-        command cargo $argv
-    end
-end
-
+# function cargo
+    # if test "$argv[1]" = "install"
+        # command cargo binstall $argv[2..-1]
+    # else
+        # command cargo $argv
+    # end
+# end
+    
 # Env's
 ## From /home/linuxbrew/.linuxbrew/bin/brew shellenv
 set -gx HOMEBREW_PREFIX     "/home/linuxbrew/.linuxbrew"
@@ -89,3 +92,6 @@ function save-edited-file --on-event fish_postexec
         set -g editor_command $argv
     end
 end
+
+zoxide init fish | source
+starship init fish | source
