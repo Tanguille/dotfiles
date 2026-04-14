@@ -45,6 +45,7 @@ if ! command -v cargo-binstall &>/dev/null; then
 fi
 
 cargo binstall -y \
+    bat \
     cargo-autoinherit \
     cargo-bloat \
     cargo-clean-all \
@@ -57,7 +58,9 @@ cargo binstall -y \
     cargo-udeps \
     cargo-update \
     cargo-watch \
-    starship
+    ripgrep \
+    starship \
+    zoxide
 
 echo "==> Enabling ssh-agent systemd user service..."
 systemctl --user enable --now ssh-agent.socket 2>/dev/null || true

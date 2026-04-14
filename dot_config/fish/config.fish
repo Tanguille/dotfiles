@@ -3,11 +3,14 @@ if status is-interactive
 end
 
 # Ensure SSH_AUTH_SOCK points to the systemd-managed agent
-set -x SSH_AUTH_SOCK /run/user/$UID/ssh-agent.socket
+set -x SSH_AUTH_SOCK $XDG_RUNTIME_DIR/ssh-agent.socket
+
+# Default editor (matches gitconfig)
+set -gx EDITOR micro
 
 # Aliases
 alias ls "/usr/bin/eza --icons --group-directories-first --color-scale -bghm"
-alias update "sudo dnf upgrade --refresh -y && sudo dnf autoremove -y && flatpak update -y && rustup update && cargo install-update -a && mise self-update -y && mise upgrade && fisher update"
+alias update "sudo dnf upgrade --refresh -y && sudo dnf autoremove -y && flatpak update -y && rustup update && cargo install-update -a && mise self-update -y && mise upgrade --bump && fisher update"
 alias grep "rg"
 alias cc "cargo lcheck"
 alias cb "cargo clippy"
